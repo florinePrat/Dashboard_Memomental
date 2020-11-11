@@ -30,18 +30,19 @@
             <a class="dropdown-item" href="#">Another notification</a>
           </drop-down>
           <li class="nav-item">
-            <router-link :to="{path:'/'}" class="nav-link">
+            <button @click="deconnexion()" class="nav-link">
               <i class="ti-settings"></i>
               <p>
                 Deconnexion
               </p>
-            </router-link>
+            </button>
           </li>
         </ul>
       </div>
     </div></nav>
 </template>
 <script>
+import authenticationService from "../../plugins/authenticationService"
 export default {
   computed: {
     routeName() {
@@ -69,6 +70,10 @@ export default {
     },
     hideSidebar() {
       this.$sidebar.displaySidebar(false);
+    },
+    deconnexion() {
+      authenticationService.logout()
+      this.$router.push('/')
     }
   }
 };

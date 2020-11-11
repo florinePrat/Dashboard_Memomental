@@ -1,5 +1,5 @@
 <template>
-  <span>Welcome to <b>Paper Dashboard</b> - a beautiful freebie for every web developer.</span>
+  <span>Invalid <b>credentials</b> - can't access dashboard.</span>
 </template>
 
 <script>

@@ -17,11 +17,7 @@
           </div>
 
           <div class="text-center">
-            <p-button
-              type="submit"
-              round
-              @click.native.prevent="check()"
-            >
+            <p-button type="submit" round @click.native.prevent="check()">
               check authentication
             </p-button>
           </div>
@@ -31,18 +27,38 @@
   </div>
 </template>
 <script>
-import authenticationService from "../plugins/authenticationService"
+import authenticationService from "../plugins/authenticationService";
+import NotificationTemplate from "../pages/Notifications/NotificationTemplate";
 export default {
   data() {
     return {
       password: "",
+      activeNotifications: true
     };
   },
-  mounted() {},
+  mounted() {
+    if (authenticationService.isAuthenticated()) {
+      this.$router.push("/dashboard");
+    }
+  },
   methods: {
     check() {
-      if(this.password !== "") {
-          authenticationService.authenticate(this.password)
+      if (this.password !== "") {
+        authenticationService
+          .authenticate(this.password)
+          .then(() => {
+            this.$router.push("/dashboard");
+          })
+          .catch((err) => {
+            this.password = ""
+            this.$notify({
+              component: NotificationTemplate,
+              icon: "ti-thumb-down",
+              horizontalAlign: 'center',
+              verticalAlign: 'top',
+              type: 'warning',
+            });
+          });
       }
     },
   },
