@@ -35,7 +35,6 @@ import authenticationService from "../plugins/authenticationService"
 export default {
   data() {
     return {
-      email: "",
       password: "",
     };
   },

@@ -5,20 +5,19 @@ const isAuthenticated = () => {
 }
 
 const authenticate = (password) => {
-    console.log(password)
     axios({
         method: 'post',
         url: process.env.VUE_APP_API + '/api/auth/login',
-        data : {'mail': process.env.ADMIN_MAIL,'password': password},
+        data : {'mail': 'app.memomental@gmail.com','password': password},
         headers : {'Content-Type': 'application/json'}
     })
     .then((res) => {
-        console.log(res.data)
-        //localStorage.setItem('token', res.data.token)
+        localStorage.setItem('token', res.data.token)
+        return true
     })
     .catch((err) => {
-        console.log(err)
         localStorage.clear();
+        return false
     })
 }
 
