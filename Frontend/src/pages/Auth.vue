@@ -7,18 +7,6 @@
           <div class="row">
             <div class="col-md-12">
               <fg-input
-                type="email"
-                label="Email"
-                placeholder="Email"
-                v-model="email"
-              >
-              </fg-input>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12">
-              <fg-input
                 type="password"
                 label="Password"
                 placeholder="Password"
@@ -32,7 +20,7 @@
             <p-button
               type="submit"
               round
-              @click.native.prevent="authentication()"
+              @click.native.prevent="check()"
             >
               check authentication
             </p-button>
@@ -43,6 +31,7 @@
   </div>
 </template>
 <script>
+import authenticationService from "../plugins/authenticationService"
 export default {
   data() {
     return {
@@ -52,9 +41,9 @@ export default {
   },
   mounted() {},
   methods: {
-    authentication() {
-      if(email !== "" && password !== "") {
-
+    check() {
+      if(this.password !== "") {
+          authenticationService.authenticate(this.password)
       }
     },
   },

@@ -1,21 +1,30 @@
 import axios from "axios";
 
 const isAuthenticated = () => {
-    return true;
+    return (localStorage.getItem('token') !== null)
 }
 
-const authenticate = (mail, password) => {
-    return axios({
+const authenticate = (password) => {
+    console.log(password)
+    axios({
         method: 'post',
         url: process.env.VUE_APP_API + '/api/auth/login',
-        data : {'mail': mail,'password': password},
+        data : {'mail': process.env.ADMIN_MAIL,'password': password},
         headers : {'Content-Type': 'application/json'}
+    })
+    .then((res) => {
+        console.log(res.data)
+        //localStorage.setItem('token', res.data.token)
+    })
+    .catch((err) => {
+        console.log(err)
+        localStorage.clear();
     })
 }
 
-const authenticationProvider = {
+const authenticationService = {
   isAuthenticated,
   authenticate
 };
 
-export default authenticationProvider;
+export default authenticationService;
