@@ -1,7 +1,7 @@
 <template>
   <div class="auth-wrapper">
-    <card class="card">
-      <h1>Authentication</h1>
+    <card class="card" id="auth-card">
+      <h1 id="auth-title">Authentication</h1>
       <div>
         <form @submit.prevent>
           <div class="row">
@@ -54,7 +54,7 @@ export default {
   methods: {
     authentication() {
       if(email !== "" && password !== "") {
-          
+
       }
     },
   },
@@ -71,11 +71,11 @@ export default {
   overflow: hidden;
 }
 
-.card {
+#auth-card {
   padding: 3em;
 }
 
-h1 {
+#auth-title {
   padding-bottom: 1rem;
 }
 </style>
