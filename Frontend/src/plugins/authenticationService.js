@@ -27,10 +27,15 @@ const logout = () => {
     localStorage.clear();
 }
 
+const getToken = () => {
+    return localStorage.getItem('token')
+}
+
 const authenticationService = {
   isAuthenticated,
   authenticate,
-  logout
+  logout,
+  getToken
 };
 
 export default authenticationService;

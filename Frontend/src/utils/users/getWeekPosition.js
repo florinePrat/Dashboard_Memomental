@@ -1,5 +1,5 @@
-//import axios from "axios";
-//import {getCookie} from "../cookies";
+import axios from "axios";
+import authenticationService from "../../plugins/authenticationService"
 
 export function getWeekPosition (){
     let burl = process.env.VUE_APP_API;
@@ -8,7 +8,7 @@ export function getWeekPosition (){
         url: burl + '/api/users/positionWeek/',
         headers : {
             'Content-Type': 'application/json',
-            'Authorization' : 'Bearer ' + getCookie('token')
+            'Authorization' : 'Bearer ' + authenticationService.getToken()
         }
     })
 }

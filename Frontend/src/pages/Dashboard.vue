@@ -195,7 +195,6 @@ export default {
   mounted(){
     getWeekPosition()
       .then(res => {
-        console.log(res.data.position);
         this.statsCards.value = res.data.position.weekPositions.length;
       })
       .catch(err =>{
