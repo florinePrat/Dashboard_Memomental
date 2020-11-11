@@ -1,10 +1,12 @@
+require('dotenv').config();
 import axios from "axios";
 
 const isAuthenticated = () => {
     return (localStorage.getItem('token') !== null)
-}
+};
 
 const authenticate = (password) => {
+  console.log(process.env.VUE_APP_API);
     return new Promise((resolve, reject) => {
         axios({
             method: 'post',
@@ -13,7 +15,7 @@ const authenticate = (password) => {
             headers : {'Content-Type': 'application/json'}
         })
         .then((res) => {
-            localStorage.setItem('token', res.data.token)
+            localStorage.setItem('token', res.data.token);
             resolve()
         })
         .catch((err) => {

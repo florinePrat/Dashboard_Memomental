@@ -91,7 +91,7 @@ export default {
           type: "warning",
           icon: "ti-calendar",
           title: "Weekly Active Users",
-          value: "",
+          value: "0",
           footerText: "Updated now",
           footerIcon: "ti-reload"
         },
@@ -195,7 +195,8 @@ export default {
   mounted(){
     getWeekPosition()
       .then(res => {
-        this.statsCards.value = res.data.position.weekPositions.length;
+        console.log(res.data.position.weekPositions);
+        this.statsCards[0].value = res.data.position.weekPositions.length;
       })
       .catch(err =>{
         console.log(err)
