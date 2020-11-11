@@ -92,8 +92,8 @@ export default {
           icon: "ti-calendar",
           title: "Weekly Active Users",
           value: "0",
-          footerText: "Updated now",
-          footerIcon: "ti-reload"
+          footerText: "Global",
+          footerIcon: "ti-world"
         },
         {
           type: "success",
