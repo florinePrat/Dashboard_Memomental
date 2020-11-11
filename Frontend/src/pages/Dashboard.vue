@@ -6,14 +6,14 @@
       <div class="col-md-6 col-xl-3" v-for="stats in statsCards" :key="stats.title">
         <stats-card>
           <div class="icon-big text-center" :class="`icon-${stats.type}`" slot="header">
-            <i :class="stats.icon"></i>
+            <i :class="stats.icon"/>
           </div>
           <div class="numbers" slot="content">
             <p>{{stats.title}}</p>
             {{stats.value}}
           </div>
           <div class="stats" slot="footer">
-            <i :class="stats.footerIcon"></i> {{stats.footerText}}
+            <i :class="stats.footerIcon"/> {{stats.footerText}}
           </div>
         </stats-card>
       </div>
@@ -28,12 +28,12 @@
                     :chart-data="usersChart.data"
                     :chart-options="usersChart.options">
           <span slot="footer">
-            <i class="ti-reload"></i> Updated 3 minutes ago
+            <i class="ti-reload"/> Updated 3 minutes ago
           </span>
           <div slot="legend">
-            <i class="fa fa-circle text-info"></i> Open
-            <i class="fa fa-circle text-danger"></i> Click
-            <i class="fa fa-circle text-warning"></i> Click Second Time
+            <i class="fa fa-circle text-info"/> Open
+            <i class="fa fa-circle text-danger"/> Click
+            <i class="fa fa-circle text-warning"/> Click Second Time
           </div>
         </chart-card>
       </div>
@@ -44,11 +44,11 @@
                     :chart-data="preferencesChart.data"
                     chart-type="Pie">
           <span slot="footer">
-            <i class="ti-timer"></i> Campaign set 2 days ago</span>
+            <i class="ti-timer"/> Campaign set 2 days ago</span>
           <div slot="legend">
-            <i class="fa fa-circle text-info"></i> Open
-            <i class="fa fa-circle text-danger"></i> Bounce
-            <i class="fa fa-circle text-warning"></i> Unsubscribe
+            <i class="fa fa-circle text-info"/> Open
+            <i class="fa fa-circle text-danger"/> Bounce
+            <i class="fa fa-circle text-warning"/> Unsubscribe
           </div>
         </chart-card>
       </div>
@@ -59,11 +59,11 @@
                     :chart-data="activityChart.data"
                     :chart-options="activityChart.options">
           <span slot="footer">
-            <i class="ti-check"></i> Data information certified
+            <i class="ti-check"/> Data information certified
           </span>
           <div slot="legend">
-            <i class="fa fa-circle text-info"></i> Tesla Model S
-            <i class="fa fa-circle text-warning"></i> BMW 5 Series
+            <i class="fa fa-circle text-info"/> Tesla Model S
+            <i class="fa fa-circle text-warning"/> BMW 5 Series
           </div>
         </chart-card>
       </div>
