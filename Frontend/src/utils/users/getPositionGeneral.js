@@ -1,5 +1,5 @@
-import axios from "axios";
-import {getCookie} from "../cookies";
+//import axios from "axios";
+//import {getCookie} from "../cookies";
 
 export function getPosition (){
     let burl = process.env.VUE_APP_API;

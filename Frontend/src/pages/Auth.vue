@@ -53,7 +53,9 @@ export default {
   mounted() {},
   methods: {
     authentication() {
-      console.log("oci");
+      if(email !== "" && password !== "") {
+          
+      }
     },
   },
 };

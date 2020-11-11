@@ -75,6 +75,7 @@
 <script>
 import { StatsCard, ChartCard } from "@/components/index";
 import Chartist from 'chartist';
+import {getWeekPosition} from "../utils/users/getWeekPosition";
 export default {
   components: {
     StatsCard,
@@ -88,9 +89,9 @@ export default {
       statsCards: [
         {
           type: "warning",
-          icon: "ti-server",
-          title: "Capacity",
-          value: "105GB",
+          icon: "ti-calendar",
+          title: "Weekly Active Users",
+          value: "",
           footerText: "Updated now",
           footerIcon: "ti-reload"
         },
@@ -187,9 +188,21 @@ export default {
           series: [62, 32, 6]
         },
         options: {}
-      }
+      },
+
     };
-  }
+  },
+  mounted(){
+    getWeekPosition()
+      .then(res => {
+        console.log(res.data.position);
+        this.statsCards.value = res.data.position.weekPositions.length;
+      })
+      .catch(err =>{
+        console.log(err)
+      });
+
+  },
 };
 </script>
 <style>
