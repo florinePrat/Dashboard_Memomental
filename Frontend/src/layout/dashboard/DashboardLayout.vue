@@ -13,7 +13,7 @@
       <mobile-menu>
         <li class="nav-item">
           <a class="nav-link">
-            <i class="ti-panel"></i>
+            <i class="ti-panel"/>
             <p>Stats</p>
           </a>
         </li>
@@ -29,21 +29,21 @@
         </drop-down>
         <li class="nav-item">
           <a class="nav-link">
-            <i class="ti-settings"></i>
+            <i class="ti-settings"/>
             <p>Settings</p>
           </a>
         </li>
-        <li class="divider"></li>
+        <li class="divider"/>
       </mobile-menu>
     </side-bar>
     <div class="main-panel">
-      <top-navbar></top-navbar>
+      <top-navbar/>
 
       <dashboard-content @click.native="toggleSidebar">
 
       </dashboard-content>
 
-      <content-footer></content-footer>
+      <content-footer/>
     </div>
   </div>
 </template>
