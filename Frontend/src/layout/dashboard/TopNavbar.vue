@@ -30,12 +30,12 @@
             <a class="dropdown-item" href="#">Another notification</a>
           </drop-down>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <router-link :to="{path:'/'}" class="nav-link">
               <i class="ti-settings"></i>
               <p>
-                Settings
+                Deconnexion
               </p>
-            </a>
+            </router-link>
           </li>
         </ul>
       </div>
